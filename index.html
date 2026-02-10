@@ -31,9 +31,15 @@
       h1 {
         font-size: 2.3em;
       }
+      p{
+        font-size: 2.3em;
+      }
+      .msg{
+        font-size: 1.5em;
+      }
       button {
         margin-top: 20px;
-        padding: 14px 28px;
+        padding: 30px 50px;
         border: none;
         border-radius: 30px;
         background: #ff2e63;
@@ -72,9 +78,7 @@
     <div class="card">
       <h1>Bonne Saint-Valentin ❤️</h1>
       <p>
-        GLAMOUR<br />
-        Ceci est une preuve de la consideration que je t'accorde a toi et a la
-        relation qui nous lie malgrer la distance
+        GLAMOUR
       </p>
       <button onclick="playLove()">Clique ici 💖</button>
       <p id="msg"></p>
@@ -83,7 +87,7 @@
       function playLove() {
         document.getElementById("music").play();
         document.getElementById("msg").innerHTML =
-          "Je voudrais que ça ne s'arrete jamais ❤️";
+          "sois toujours heureuse ❤️";
       }
 
       setInterval(() => {
