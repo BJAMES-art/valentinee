@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pour toi ❤️</title>
+    <style>
+      body {
+        margin: 0%;
+        height: 100vh;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+          url("image/elle.jpg") center/cover no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Segoe UI", sans-serif;
+        overflow: hidden;
+        color: white;
+      }
+      .card {
+        margin-top: 300px;
+        background: rgba(0, 0, 0, 0.35);
+        padding: 35px;
+        border-radius: 25px;
+        text-align: center;
+        max-width: 360px;
+        backdrop-filter: blur(6px);
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+      }
+
+      h1 {
+        font-size: 2.3em;
+      }
+      button {
+        margin-top: 20px;
+        padding: 14px 28px;
+        border: none;
+        border-radius: 30px;
+        background: #ff2e63;
+        color: white;
+        font-size: 1.1em;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #ff144f;
+      }
+      .heart {
+        position: absolute;
+        color: #ff4d6d;
+        font-size: 20px;
+        animation: fall 5s linear infinite;
+      }
+      @keyframes fall {
+        0% {
+          transform: translateY(-100px);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(100vh);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <audio id="music" loop>
+      <source
+        src="audio/Chiké___Simi_–_Running__To_You__[Official_Video](256k).mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <div class="card">
+      <h1>Bonne Saint-Valentin ❤️</h1>
+      <p>
+        GLAMOUR<br />
+        Ceci est une preuve de la consideration que je t'accorde a toi et a la
+        relation qui nous lie malgrer la distance
+      </p>
+      <button onclick="playLove()">Clique ici 💖</button>
+      <p id="msg"></p>
+    </div>
+    <script>
+      function playLove() {
+        document.getElementById("music").play();
+        document.getElementById("msg").innerHTML =
+          "Je voudrais que ça ne s'arrete jamais ❤️";
+      }
+
+      setInterval(() => {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = 15 + Math.random() * 25 + "px";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 5000);
+      }, 90);
+    </script>
+  </body>
+</html>
